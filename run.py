@@ -3,8 +3,11 @@
 
 import os
 import logging
+import sys
 from colorama import init, Fore
 
+if sys.platform == "win32":
+    isWindows = True
 
 # Basic simple log file configuration to save wifi details.
 logging.basicConfig(
@@ -37,7 +40,7 @@ def main():
         with open(profiles_path, 'r') as f:
             check = f.read().split()
             if network_name.capitalize() not in check:
-                print("\n{error}Network not found in the system")
+                print(f"\n{error}Network not found in the system")
         # For creating a temp file to save the network information.
         tempfile_path = os.getcwd() + "\\temp.txt"
         os.system(f"netsh wlan show profiles {network_name} key = clear>{tempfile_path}")
@@ -63,7 +66,9 @@ def main():
         exit("\nEXITED")
 
 # Cuz y not lol    
-if __name__ == "__main__":
+if __name__ == "__main__" and isWindows:
     main()
-# k one more line
-# yep nicee!
+else:
+    from time import sleep
+    print(f"This app is not available except on windows devices")
+    sleep(3)
