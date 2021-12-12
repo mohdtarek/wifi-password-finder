@@ -26,6 +26,7 @@ normal = Fore.YELLOW
 warn = Fore.LIGHTYELLOW_EX
 
 def main():
+    print(f"{warn}Please note that network names are case sensitive! make sure you enter the network name correctly.")
     # Display to user
     os.system(f"netsh wlan show profiles")
     # For Saving all the stored networks on the Windows PC.
@@ -33,7 +34,6 @@ def main():
     os.system(f"netsh wlan show profiles>{profiles_path}")
 
     def get_pass(network_name):
-        print(f"{warn}Please note that network names are case sensitive! make sure you enter the network name correctly.")
         # Checking for validity of network name.
         size = network_name.split()
         if len(size) >= 3:
@@ -42,7 +42,7 @@ def main():
         with open(profiles_path, 'r') as f:
             check = f.read().split()
             if network_name not in check:
-                print(f"\n{error}Network not found in the system")
+                print(f"\n{error}Try again in case if you didn't get network details, make sure you choose from the list or check for letter cases")
         # For creating a temp file to save the network information.
         tempfile_path = os.getcwd() + "\\temp.txt"
         os.system(f"netsh wlan show profiles {network_name} key = clear>{tempfile_path}")
