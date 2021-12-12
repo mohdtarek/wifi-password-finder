@@ -33,6 +33,7 @@ def main():
     os.system(f"netsh wlan show profiles>{profiles_path}")
 
     def get_pass(network_name):
+        print(f"{warn}Please note that network names are case sensitive! make sure you enter the network name correctly.")
         # Checking for validity of network name.
         size = network_name.split()
         if len(size) >= 3:
@@ -40,7 +41,7 @@ def main():
         # Checking if the network is not found in the system.
         with open(profiles_path, 'r') as f:
             check = f.read().split()
-            if network_name.capitalize() not in check:
+            if network_name not in check:
                 print(f"\n{error}Network not found in the system")
         # For creating a temp file to save the network information.
         tempfile_path = os.getcwd() + "\\temp.txt"
