@@ -33,25 +33,25 @@ def main():
     profiles_path = os.getcwd() + "\\profiles.txt"
     os.system(f"netsh wlan show profiles>{profiles_path}")
 
-    def get_pass(network_name):
+    def get_pass(SSID):  # SSID = network name
         # Checking for validity of network name.
-        size = network_name.split()
+        size = SSID.split()
         if len(size) >= 3:
             print(f"{error}please enter a proper network name")
         # Checking if the network is not found in the system.
         with open(profiles_path, 'r') as f:
             check = f.read().split()
-            if network_name not in check:
+            if SSID not in check:
                 print(f"\n{error}Try again in case if you didn't get network details, make sure you choose from the list or check for letter cases")
         # For creating a temp file to save the network information.
         tempfile_path = os.getcwd() + "\\temp.txt"
-        os.system(f"netsh wlan show profiles {network_name} key = clear>{tempfile_path}")
+        os.system(f"netsh wlan show profiles {SSID} key = clear>{tempfile_path}")
         # Checking for network security settings and fetching password.
         with open(tempfile_path, "r") as f:               
             for l in f:
                 if "Key Content" in l:
-                    print(f"\n\n{success}Successfully done! Showing key content (password) for {network_name}:\n\nPassword {output}{l[27: ]}")
-                    logging.info(f"\nNetwork name: {network_name}\nPassword{l[27: ]}")
+                    print(f"\n\n{success}Successfully done! Showing key content (password) for {SSID}:\n\nPassword {output}{l[27: ]}")
+                    logging.info(f"\nNetwork name: {SSID}\nPassword{l[27: ]}")
                 elif "Absent" in l:
                     print(f"{error}No security key found")
         print(f"\n{warn}choose from the above available network profiles\n", "_" * 50)
