@@ -6,6 +6,7 @@ import logging
 import sys
 from colorama import init, Fore
 
+isWindows = False
 if sys.platform == "win32":
     isWindows = True
 
