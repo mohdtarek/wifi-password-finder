@@ -7,7 +7,7 @@ import sys
 from colorama import init, Fore
 
 isWindows = False
-# Since the os.system commands in the script are only for Windows terminals.
+# Since the os.system commands in the script are only for Windows CMD.
 if sys.platform == "win32":
     isWindows = True # Code is unrichable incase you viewing this script on either mac os or Linux os device
 
@@ -15,7 +15,7 @@ if sys.platform == "win32":
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s:%(message)s",
-    filename="usage.log"
+    filename="SSID-Details.log"
     )
 
 # Colors stored in some variables for shortcuts.
