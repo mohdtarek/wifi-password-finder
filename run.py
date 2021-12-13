@@ -7,6 +7,7 @@ import sys
 from colorama import init, Fore
 
 isWindows = False
+# Since the os.system commands in the script are only for Windows terminals.
 if sys.platform == "win32":
     isWindows = True
 
@@ -72,5 +73,5 @@ if __name__ == "__main__" and isWindows:
     main()
 else:
     from time import sleep
-    print(f"This app is not available except on windows devices")
-    sleep(3)
+    print(f"This app is not available except on windows devices, exiting...")
+    sleep(2)
