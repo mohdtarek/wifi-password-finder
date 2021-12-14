@@ -1,8 +1,7 @@
 # WIFI PASS GETTER FOR MAC OS BY MOHAMED TAREK.
 # FOR FOR INFO ABOUT THE SCRIPT PLEASE GO TO README.md.
 
-# import os
-import logging
+import os
 import sys
 from colorama import init, Fore
 from time import sleep
@@ -12,29 +11,30 @@ isMac = False
 if sys.platform == "darwin":
     isMac = True  # Code is unrichable incase you viewing this script on either windows or Linux os device
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s:%(message)s",
-    filename="usage.log"
-    )
-
 # Colors stored in some variables for shortcuts.
 init(autoreset=True)
 error = Fore.RED
-success = Fore.GREEN
-output = Fore.BLUE
-normal = Fore.YELLOW
+normal = Fore.BLUE
 warn = Fore.LIGHTYELLOW_EX
 
 def main():
-    print("Script is still under development, sorry for the inconvenience!")
-    sleep(2)
+    print(f"{warn}Please note that network names might be case sensitive! make sure you enter the network name correctly.")
+    def get_pass(SSID):
+            os.system(f'Security find-generic-password -ga "{SSID}" | grep "Password"')
 
+
+    try:
+        while True:        
+            user_inpt = input(f"\n{normal}Enter the wifi network (user profile) to be hacked: ")
+            get_pass(user_inpt)       
+    except KeyboardInterrupt:
+        exit("\nEXITED")
+    except EOFError:
+        exit("\nEXITED")
 
 # Cuz y not lol    
 if __name__ == "__main__" and isMac:
     main()
 else:
-    print(f"Please make sure you are running the correct script in the correct terminal/ operating system")
+    print(f"{error}Please make sure you are running the correct script in the correct terminal/ operating system")
     sleep(2)
