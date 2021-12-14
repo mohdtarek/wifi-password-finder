@@ -34,6 +34,7 @@ def main():
     profiles_path = os.getcwd() + "\\profiles.txt"
     os.system(f"netsh wlan show profiles>{profiles_path}")
 
+
     def get_pass(SSID):  # SSID = network name
         # Checking for validity of network name.
         size = SSID.split()
@@ -55,9 +56,12 @@ def main():
                     logging.info(f"\nNetwork name: {SSID}\nPassword{l[27: ]}")
                 elif "Absent" in l:
                     print(f"{error}No security key found")
+
+
         print(f"\n{warn}choose from the above available network profiles\n", "_" * 50)
         # After getting done with the temp file, we delete it.
         os.remove(tempfile_path)
+
     # Handling exceptions with shortcut keys used to exit the app.
     try:
         while True:        
@@ -73,5 +77,5 @@ if __name__ == "__main__" and isWindows:
     main()
 else:
     from time import sleep
-    print(f"Please make sure you are running the correct script in the correct terminal/ operating system")
+    print(f"{error}Please make sure you are running the correct script in the correct terminal/ operating system")
     sleep(2)
