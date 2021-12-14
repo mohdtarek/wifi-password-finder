@@ -36,5 +36,5 @@ def main():
 if __name__ == "__main__" and isLinux:
     main()
 else:
-    print(f"Please make sure you are running the correct script in the correct terminal/ operating system")
+    print(f"{error}Please make sure you are running the correct script in the correct terminal/ operating system")
     sleep(2)
