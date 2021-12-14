@@ -1,6 +1,6 @@
 # wifi-password-finder
 beginners code using os module.
-Use this code in your school/uni computer lab to find (hack) your targeted WI-FI router in the room to get it's password. You can also use this in your device at home to find the password of your own Wi-fi network incase you forgot it.
+To be used in school/uni computer lab to find (hack) your targeted WI-FI router in the room to get it's password. You can also use this in your device at home to find the password of your own Wi-fi network incase you forgot it.
 
 # win.py
 Run win.py if your operating system is windows. If you are running your program in ubuntu bash or simillar, make sure you run linux.py. However, if you are unsure what script to run, you can run run.py and it will run the script based on your operating system.
