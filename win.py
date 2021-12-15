@@ -4,6 +4,7 @@
 import os
 import logging
 import sys
+from time import sleep
 from colorama import init, Fore
 
 isWindows = False
@@ -71,11 +72,13 @@ def main():
         exit("\nEXITED")
     except EOFError:
         exit("\nEXITED")
+    except FileNotFoundError:
+        print(f"{error}Error running the script. Try to reinstall repository or change path. If it didn't work, copy the scrip manually and run it.")
+        sleep(3)
 
 # Cuz y not lol    
 if __name__ == "__main__" and isWindows:
     main()
 else:
-    from time import sleep
     print(f"{error}Please make sure you are running the correct script in the correct terminal/ operating system")
     sleep(2)
