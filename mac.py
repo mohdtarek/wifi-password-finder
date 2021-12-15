@@ -16,6 +16,7 @@ init(autoreset=True)
 error = Fore.RED
 normal = Fore.BLUE
 warn = Fore.LIGHTYELLOW_EX
+output = Fore.WHITE
 
 def main():
     print(f"{warn}Please note that network names might be case sensitive! make sure you enter the network name correctly.")
@@ -25,7 +26,7 @@ def main():
 
     try:
         while True:        
-            user_inpt = input(f"\n{normal}Enter the wifi network (user profile) to be hacked: ")
+            user_inpt = input(f"\n{normal}Enter the wifi network (user profile) to be hacked: {output}")
             get_pass(user_inpt)       
     except KeyboardInterrupt:
         exit("\nEXITED")
