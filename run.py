@@ -1,5 +1,6 @@
 """
-Run this script if you are unsure whether which script to run
+Run this script if you are unsure whether which script to run.
+Refere to README.md for further information.
 
 """
 
@@ -17,12 +18,13 @@ def main():
     # Since the os.system commands in the script are only for linux bash. (Under developement)
     elif platform == 'linux':
         os.system("python3 linux.py")
+    # This will happen probably if the client is using a different shell in a particular os.
     else:
         with open("README.md", 'r') as f:
             print(f.read())
             from time import sleep
-            sleep(20)
             print("exiting after 20 seconds")
+            sleep(20)
 
 
 try:
