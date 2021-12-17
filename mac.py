@@ -32,8 +32,8 @@ def main():
         exit("\nEXITED")
     except EOFError:
         exit("\nEXITED")
-
-# Cuz y not lol    
+        
+         
 if __name__ == "__main__" and isMac:
     main()
 else:
