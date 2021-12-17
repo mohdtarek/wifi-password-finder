@@ -1,16 +1,23 @@
 # WIFI PASS GETTER FOR LINUX BY MOHAMED TAREK.
 # FOR FOR INFO ABOUT THE SCRIPT PLEASE GO TO README.md.
 
-# import os
+import os
 import logging
 import sys
 from colorama import init, Fore
 from time import sleep
 
+# Procedure before starting the script.
 isLinux = False
 # Since the os.system commands in the script are only for linux bash.
 if sys.platform == "linux" or sys.platform == "linux2":
-    isLinux = True  # Code is unrichable incase you viewing this script on either windows or mac os device
+    isLinux = True
+else:
+    print("\nRunning the correct script based on your operating system")
+    try:
+        os.system("python3 run.py")
+    except (KeyboardInterrupt, EOFError):
+        exit("\nEXITED")
 
 
 logging.basicConfig(
