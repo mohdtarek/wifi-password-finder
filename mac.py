@@ -23,7 +23,6 @@ def main():
     def get_pass(SSID):
             os.system(f'Security find-generic-password -ga "{SSID}" | grep "Password"')
 
-
     try:
         while True:        
             user_inpt = input(f"\n{normal}Enter the wifi network (user profile) to be hacked: {output}")
