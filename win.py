@@ -7,10 +7,17 @@ import sys
 from time import sleep
 from colorama import init, Fore
 
+# Procedure before starting the script.
 isWindows = False
 # Since the os.system commands in the script are only for Windows CMD.
 if sys.platform == "win32":
-    isWindows = True # Code is unrichable incase you viewing this script on either mac os or Linux os device
+    isWindows = True
+else:
+    print("\nRunning the correct script based on your operating system")
+    try:
+        os.system("python3 run.py")
+    except (KeyboardInterrupt, EOFError):
+        exit("\nEXITED")
 
 # Basic simple log file configuration to save wifi details.
 logging.basicConfig(
@@ -66,9 +73,7 @@ def main():
         while True:        
             user_inpt = input(f"\n{normal}Enter the wifi network (user profile) to be hacked: ")
             get_pass(user_inpt)       
-    except KeyboardInterrupt:
-        exit("\nEXITED")
-    except EOFError:
+    except (KeyboardInterrupt, EOFError):
         exit("\nEXITED")
     except FileNotFoundError:
         print(f"{error}Error running the script. Try to reinstall repository or change path. If it didn't work, copy the scrip manually and run it.")
