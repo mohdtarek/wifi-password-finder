@@ -24,9 +24,7 @@ def main():
                 from time import sleep
                 print("exiting after 20 seconds")
                 sleep(20)
-    except KeyboardInterrupt:
-        exit("\nEXITED")
-    except EOFError:
+    except (KeyboardInterrupt, EOFError):
         exit("\nEXITED")
 
 
