@@ -10,13 +10,11 @@ from sys import platform
 
 def main():
     try:
-        # Since the os.system commands for netsh wlan in the script are only for Windows CMD.
+        # Since the os.system commands for each operating system is different.
         if platform == 'win32':
             os.system("python3 win.py")
-        # Since the os.system commands for security find in the script are only for mac terminal.
         elif platform == 'darwin':
             os.system("python3 mac.py")
-        # Since the os.system commands in the script are only for linux bash. (Under developement)
         elif platform == 'linux':
             os.system("python3 linux.py")
         # This will happen probably if the client is using a different shell in a particular os.
