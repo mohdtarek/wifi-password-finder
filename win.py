@@ -76,7 +76,7 @@ def main():
         print(f"{error}Error running the script. Try to reinstall repository or change path. If it didn't work, copy the scrip manually and run it.")
         sleep(3)
 
-# Cuz y not lol    
+ 
 if __name__ == "__main__" and isWindows:
     main()
 else:
