@@ -32,7 +32,7 @@ def main():
     sleep(2)
 
 
-# Cuz y not lol    
+
 if __name__ == "__main__" and isLinux:
     main()
 else:
