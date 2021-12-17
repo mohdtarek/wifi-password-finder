@@ -80,8 +80,5 @@ def main():
         sleep(3)
 
  
-if __name__ == "__main__" and isWindows:
+if __name__ == "__main__":
     main()
-else:
-    print(f"{error}Please make sure you are running the correct script in the correct terminal/ operating system")
-    sleep(2)
