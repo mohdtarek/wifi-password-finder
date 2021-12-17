@@ -27,10 +27,5 @@ def main():
             sleep(20)
 
 
-try:
-    if __name__ == '__main__':
-        main()
-except KeyboardInterrupt:
-    exit("\nEXITED")
-except EOFError:
-    exit("\nEXITED")
+if __name__ == '__main__':
+    main()
