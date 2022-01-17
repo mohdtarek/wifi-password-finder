@@ -25,9 +25,8 @@ Run this script if you are unsure which script to run. Anything else will be und
 
 # What to do if I can't run any of those scripts?
 Step1: create a python file
-step2: copy paste the below code and run it::::::::
+step2: copy paste this code and run it:
         import sys
         print(sys.platform)
 step3: if you got "win64", "cygwin", or "msys" simply go to win.py and edit line 11, replace win32 with them
 
-otherwise, I'm sorry :)
