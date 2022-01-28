@@ -1,3 +1,4 @@
+#!/bin/bash
 """
 Run this script if you are unsure whether which script to run.
 Refere to README.md for further information.
