@@ -1,4 +1,3 @@
-#!/bin/bash
 # FOR FOR INFO ABOUT THE SCRIPT PLEASE GO TO README.md.
 
 import os
